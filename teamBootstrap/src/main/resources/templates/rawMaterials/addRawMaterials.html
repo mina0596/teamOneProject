@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout"
+layout:decorate="@{layout/default_rawMaterials}">
+
+<th:block layout:fragment="pageTitle">
+	   <div class="border-head"> 
+	    <h3>원부자재 등록</h3>
+	    </div>
+</th:block>
+
+
+<th:block layout:fragment="container">
+	원부자재 새로 등록할 수 있는 form 만들어주기
+	<br><br><br>
+	<div class="showback">
+		<div class="form-group">
+	      <label class="col-sm-2 col-sm-2 control-label">원부자재 재료명</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control">
+	        <span class="help-block"></span>
+	      </div>
+	    </div>
+	
+    
+      <h4><i class="fa fa-angle-right"></i>원부자재 구분</h4>
+      <!-- Split button -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-theme03">원부자재 구분</button>
+        <button type="button" class="btn btn-theme03 dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+          </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">원자재</a></li>
+          <li><a href="#">부자재</a></li>
+          <li class="divider"></li>
+          <li><a href="#">그외</a></li>
+        </ul>
+      </div>
+    </div>
+
+	
+</th:block>
+
+</html>
