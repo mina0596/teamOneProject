@@ -8,8 +8,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class QualityControlController {
 
 	
-	
-	
+	//불량품 등록
+		@GetMapping("/addDefectiveProduct")
+		public String addDefectiveProduct(Model model) {
+			
+			model.addAttribute("title", "불량품 등록");
+			return"quality/#addDefectiveProduct";
+		}
+		
+	//불량품 조회
+	@GetMapping("/defectiveProductList")
+	public String getDefectiveProductList(Model model) {
+		
+		model.addAttribute("title", "불량품 조회");
+		return"quality/#defectiveProductList";
+	}
+
 	//검사현황 실적 
 	@GetMapping("/inspectionPerformance")
 	public String inspectionPerformance(Model model) {

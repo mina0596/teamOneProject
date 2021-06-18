@@ -41,15 +41,21 @@ public class AccountingController {
 		return "accounting/accounting";
 		
 	}
-
+	//결제 등록
 	@GetMapping("/addInvoiceApproval")
 	public String addInvoiceApproval() {
 		return "accounting/#addInvoiceApproval";
 	}
 	
+	//결제 승인 현황 목록
+	@GetMapping("/invoiceApprovalList")
+	public String getInvoiceApprovalList() {
+		return "accounting/#invoiceApprovalList";
+	}
+	
 	//계정과목 목록
 	@GetMapping("/accountSubjectList")
-	public String getInvoiceApprovalList() {
+	public String getAccountCategoryList() {
 		return "accounting/accountSubjectList";
 	}
 			

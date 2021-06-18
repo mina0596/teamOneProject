@@ -47,10 +47,10 @@ public class ShipmentController {
 	public String getShipment(){
 		return "shipment/shipment";
 	}
-	//운송정보
+	//운송회사 정보
 	@GetMapping("/courierList")
 	public String getCourierList() {
-		return "shipment/courierList";
+		return "shipment/#courierList";
 	}
 	//출고등록
 	@GetMapping("/addShipment")
