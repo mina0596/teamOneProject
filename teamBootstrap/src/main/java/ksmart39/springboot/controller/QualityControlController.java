@@ -1,8 +1,12 @@
 package ksmart39.springboot.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class QualityControlController {
@@ -59,12 +63,18 @@ public class QualityControlController {
 		model.addAttribute("title", "검사현황관리:검사현황등록");
 		return"quality/addQualityInspectionStatus";
 	}
+
 	//검사종류 리스트 메서드
 	@GetMapping("/qualityInspectionList")
-	public String getQualityInspectionList(Model model) {
+	public String getQualityInspectionList(Model model,@RequestParam(name = "qualityInspectionSearchkey",required = false)String qualityInspectionSearchkey
+			,@RequestParam(name ="qualityInspectionSearchValue",required = false )String qualityInspectionSearchValue) {
+	
 		
 		model.addAttribute("title", "품질검사:검사목록 및 조회목록");
-		return"quality/qualityInspectionList";
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("qualityInspectionSearchkey", qualityInspectionSearchkey);
+		paramMap.put("qualityInspectionSearchValue", qualityInspectionSearchValue);
+		return"quality/!qualityInspectionList";
 	}
 	
 	//검사종류 등록 메서드
@@ -72,8 +82,8 @@ public class QualityControlController {
 	public String addQualityInspection(Model model) {
 		
 		model.addAttribute("title", "품질검사:검사등록");
-		return"quality/addQualityInspection";
-	}
+		return"quality/!addQualityInspection";
+	}	
 	
 
 	@GetMapping("/addStandardTable")
