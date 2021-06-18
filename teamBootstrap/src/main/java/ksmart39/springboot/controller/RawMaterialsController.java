@@ -22,4 +22,19 @@ public class RawMaterialsController {
 	public String getRawMeterialsList() {
 		return "rawMaterials/rawMaterialsList";
 	}
+	
+	@GetMapping("/materialsList")
+	public String materialsList() {
+		return "rawMaterials/rawMaterialsList";
+	}
+	
+	@GetMapping("/materialsAdd")
+	public String materialsAdd() {
+		return "rawMaterials/addRawMaterials";
+	}
+	
+	@GetMapping("/rawmaterialmangement")
+	public String rawmaterialmangement() {
+		return "rawMaterials/rawMaterials";
+	}
 }
